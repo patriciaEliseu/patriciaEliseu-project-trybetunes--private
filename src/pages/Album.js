@@ -27,7 +27,7 @@ class Album extends Component {
     });
     const listaAlbuns = await getMusics(id);
     const informacao = listaAlbuns[0];
-    console.log('judia', listaAlbuns);
+    // console.log('judia', listaAlbuns);
     // const todasMusicas = listaAlbuns.splice(1);
     // console.log('judia 2', todasMusicas);
     this.setState({
@@ -65,10 +65,11 @@ class Album extends Component {
               {
                 listaMusicas.slice(1).map((musica) => (
                   <MusicCard
-                    // musica={ musica }
+                    musica={ musica }
                     nome={ musica.trackName }
                     key={ musica.trackId }
                     resumo={ musica.previewUrl }
+                    trackId={ musica.trackId }
                   />
 
                 ))
