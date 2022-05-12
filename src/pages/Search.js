@@ -38,9 +38,9 @@ class Search extends Component {
       });
       const normal = await SearchAlbumsAPIs(inputNameSearch);
       const artista = inputNameSearch;
-      console.log('jogo', artista);
+      // console.log('jogo', artista);
       this.setState({ artista });
-      console.log(normal);
+      // console.log(normal);
       this.setState({
         carregaTelaSearch: false,
         inputNameSearch: '',
@@ -103,4 +103,5 @@ class Search extends Component {
       );
     }
 }
+
 export default Search;

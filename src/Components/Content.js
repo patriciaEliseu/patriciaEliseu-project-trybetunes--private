@@ -25,9 +25,11 @@ class Content extends Component {
             exact
           />
           <Route
-            path="/album/:id"
-            component={ Album }
             exact
+            path="/album/:id"
+            render={ (props) => (
+              <Album { ...props } />
+            ) }
           />
           <Route
             path="/favorites"
