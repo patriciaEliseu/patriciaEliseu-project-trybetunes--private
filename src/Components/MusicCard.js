@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong /* getFavoriteSongs */ } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
+
+console.log('novidade', getFavoriteSongs());
 
 class MusicCard extends Component {
   constructor() {
@@ -13,14 +15,15 @@ class MusicCard extends Component {
   }
 
   checkOnChange = ({ target }) => {
-    // console.log('eu', target.checked);
+    console.log('eu', target.checked);
     const { musica } = this.props;
+    console.log('eu3', musica);
     this.setState({
       favorita: target.checked,
     }, async () => {
       const { favorita } = this.state;
       if (favorita === true) {
-        // console.log('eu2', trackId);
+        // console.log('eu2', favorita);
         this.setState({
           carregaTela: true,
         });
@@ -31,6 +34,16 @@ class MusicCard extends Component {
       }
     });
   };
+
+  componentDidMount() {
+    this.setState({
+      favorita: checked.some((musica) => musica.trackId === trackId),
+      
+
+    })
+
+    }
+  }
 
   render() {
     const { resumo, nome, trackId } = this.props;
